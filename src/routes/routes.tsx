@@ -18,27 +18,9 @@ const Router = () => {
       <Routes>
         <Route element={<PrivateRouter />}>
           <Route path="/" element={<Layout />}>
-            <Route
-              index
-              path="/"
-              element={
-                <SuspensePage
-                  element={
-                    <div>
-                      <AuthorApp />
-                    </div>
-                  }
-                />
-              }
-            />
-            <Route
-              path="author/*"
-              element={<SuspensePage element={<AuthorApp />} />}
-            />
-            <Route
-              path="curriculum/*"
-              element={<SuspensePage element={<CurriculumApp />} />}
-            />
+            <Route index path="/" element={<SuspensePage element={<Home />} />} />
+            <Route path="author/*" element={<SuspensePage element={<AuthorApp />} />} />
+            <Route path="curriculum/*" element={<SuspensePage element={<CurriculumApp />} />} />
           </Route>
         </Route>
 
